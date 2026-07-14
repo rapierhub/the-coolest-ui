@@ -3044,13 +3044,12 @@ local Library do
                     Settings:Label(Index):Colorpicker({
                         Flag = Index,
                         Default = Library.Theme[Index],
-                        Callback = function(Value)
-                            Library.Theme[Index] = Value
-                            Library:ChangeTheme(Index, Value)
+                        Callback = function(ColorValue)
+                            Library.Theme[Index] = ColorValue
+                            Library:ChangeTheme(Index, ColorValue)
                         end
                     })
-                end
-
+             end    
                 Window.Items = Items
             end
             

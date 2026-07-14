@@ -2836,7 +2836,7 @@ local Library do
                     end)
                 end)
 
-                local FirstPage = Library.Pages[1] or Window:Page({Name = "Settings", Icon = "settings"})
+                 local FirstPage = Library.Pages[1] or Window:Page({Name = "Settings", Icon = "settings"})
                 
                 local Settings = setmetatable({
                     Window = Window,
@@ -2984,11 +2984,7 @@ local Library do
                             SettingsItems["Settings"].Instance.Visible = true
                             SettingsItems["Settings"].Instance.Parent = Library.Holder.Instance
 
-                            SettingsItems["Settings"].Instance.Position = UDim2New(
-                                0, 18, 
-                                0, 
-                                90
-                            )
+                            SettingsItems["Settings"].Instance.Position = UDim2New(0, 18, 0, 90)
                             SettingsItems["Settings"]:Tween(nil, {Size = UDim2New(0, 325, 0, 185)})
         
                             for Index, Value in Library.OpenFrames do 
@@ -3045,7 +3041,7 @@ local Library do
                     end)
     
                     Settings.Items = SettingsItems
-                end
+                end 
 
                 for Index, Value in Library.Theme do 
                     Settings:Label(Index):Colorpicker({
@@ -3059,7 +3055,7 @@ local Library do
                 end
 
                 Window.Items = Items
-            end
+            end  
             
             local Debounce = false
 

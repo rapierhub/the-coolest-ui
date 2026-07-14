@@ -2952,18 +2952,13 @@ local Library do
                     end)
                 end)
 
-local FirstPage = Library.Pages[1] or Window:Page({Name = "Settings", Icon = "settings"})
-
-local Settings = setmetatable({
-    Window = Window,
-    Page = FirstPage,
-    Section = nil,
+local Settings = {
     IsOpen = false,
-    Name = "Settings",
+    Name = ""..#Library.Sections,
     Items = { },
     IsSettings = true,
     Elements = { }
-}, Library.Sections)
+}
     
                 local SettingsItems = { }
                 do

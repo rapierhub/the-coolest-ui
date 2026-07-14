@@ -3049,10 +3049,11 @@ local Library do
                             Library:ChangeTheme(Index, ColorValue)
                         end
                     })
-             end    
+                end
+
                 Window.Items = Items
             end
-            
+
             local Debounce = false
 
             function Window:SetCenter()

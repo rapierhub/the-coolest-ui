@@ -62,7 +62,7 @@ local Library do
     -- Lucide Icons
     local FetchIcons, Icons = pcall(function()
         return (loadstring(
-            game:HttpGet("https://raw.githubusercontent.com/deividcomsono/lucide-roblox-direct/refs/heads/main/source.lua")
+            game:HttpGet("https://raw.githubusercontent.com/notpoiu/lucide-roblox-direct/refs/heads/main/source.lua")
         ))()
     end)
 

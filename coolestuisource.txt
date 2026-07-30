@@ -373,15 +373,20 @@ local Library do
         if not FetchIcons then
             return nil
         end
-        
-        local Success, Icon = pcall(Icons.GetAsset, IconName)
-        
-        if not Success then
+
+        local Url = Icons[IconName] or Icons["lucide-" .. IconName]
+
+        if not Url then
             return nil
         end
-        
-        return Icon
+
+        return {
+            Url             = Url,
+            ImageRectOffset = Vector2New(0, 0),
+            ImageRectSize   = Vector2New(0, 0),
+        }
     end
+
 
     local function IsValidCustomIcon(Icon)
         return typeof(Icon) == "string" and (Icon:match("rbxasset") or Icon:match("roblox%.com/asset/%?id=") or Icon:match("rbxthumb://type="))

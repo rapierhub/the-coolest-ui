@@ -352,7 +352,7 @@ local Library do
         }
     }
 
-    Library.Theme = TableClone(Themes["Fatality"])
+    Library.Theme = TableClone(Themes["Default"])
     Library.Themes = Themes
 
     -- Folder paths (not initialized until needed)

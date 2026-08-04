@@ -189,13 +189,13 @@ local Library do
 
     local Themes = {
         ["Default"] = {
-            ["Background"] = FromRGB(15, 15, 15),
-            ["Inline"] = FromRGB(22, 22, 22),
-            ["Outline"] = FromRGB(35, 35, 35),
-            ["Text"] = FromRGB(240, 240, 220),
-            ["Dark Text"] = FromRGB(130, 130, 90),
-            ["Element"] = FromRGB(28, 28, 28),
-            ["Accent"] = FromRGB(255, 247, 0)
+            ["Background"] = FromRGB(13, 15, 18),
+            ["Inline"] = FromRGB(22, 25, 30),
+            ["Outline"] = FromRGB(26, 30, 36),
+            ["Text"] = FromRGB(200, 200, 200),
+            ["Dark Text"] = FromRGB(100, 100, 100),
+            ["Element"] = FromRGB(28, 32, 38),
+            ["Accent"] = FromRGB(184, 212, 255)
         },
         ["BBot"] = {
             ["Background"] = FromRGB(30, 30, 46),

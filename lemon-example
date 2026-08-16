@@ -1,8 +1,8 @@
 local Window = Library:Window({
-    Name = "Pandemonium Example",
+    Name = "Lemon Client Example",
     SubTitle = "dsc.gg/racistguy23",
     TimeRemaining = "67 years",
-    Icon = "panda"
+    Icon = "citrus"
 })
 
 local HomePage = Window:Page({

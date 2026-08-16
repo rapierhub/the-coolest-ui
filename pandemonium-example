@@ -1,0 +1,174 @@
+local Window = Library:Window({
+    Name = "Pandemonium Example",
+    SubTitle = "dsc.gg/racistguy23",
+    TimeRemaining = "67 years",
+    Icon = "panda"
+})
+
+local HomePage = Window:Page({
+    Icon = "circle-user",
+    Columns = 2
+})
+
+local SettingsPage = Library:CreateSettingsPage(Window)
+
+local SectionLeft = HomePage:Section({Name = "Examples", Icon = "box", Side = 1})
+local SectionRight = HomePage:Section({Name = "More Examples", Icon = "package", Side = 2})
+
+local Toggle = SectionLeft:Toggle({
+    Name = "Toggle",
+    Flag = "Toggle",
+    Default = false,
+    Callback = function(Value)
+        print(Value)
+    end
+})
+
+local ToggleWithColorpicker = SectionLeft:Toggle({
+    Name = "Toggle with Colorpicker",
+    Flag = "ToggleColor",
+    Default = false,
+    Callback = function(Value)
+        print(Value)
+    end
+}):Colorpicker({
+    Flag = "TogglePickerColor",
+    Default = Color3.fromRGB(255, 0, 0),
+    Callback = function(Value)
+        print(Value)
+    end
+})
+
+local ToggleWithKeybind = SectionLeft:Toggle({
+    Name = "Toggle with Keybind",
+    Flag = "ToggleKey",
+    Default = false,
+    Callback = function(Value)
+        print(Value)
+    end
+}):Keybind({
+    Flag = "ToggleKeybind",
+    Default = Enum.KeyCode.Q,
+    Callback = function(Value)
+        print(Value)
+    end
+})
+
+SectionLeft:Button({
+    Name = "Button",
+    Callback = function()
+        print("Button")
+    end
+})
+
+SectionLeft:Button({
+    Name = "TestNotification",
+    Callback = function()
+        Library:Notification("This is a notification notifying..", "bell", 5)
+    end
+})
+
+SectionLeft:Slider({
+    Name = "Slider",
+    Flag = "Slider",
+    Default = 50,
+    Min = 0,
+    Max = 100,
+    Decimals = 1,
+    Suffix = "%",
+    Callback = function(Value)
+        print(Value)
+    end
+})
+
+SectionRight:Dropdown({
+    Name = "Single Select",
+    Flag = "Dropdown",
+    Default = "First",
+    Items = {"First", "Second", "Third", "Fourth", "Fifth", "Sixth"},
+    MaxSize = 100,
+    Callback = function(Value)
+        print(Value)
+    end
+})
+
+SectionRight:Dropdown({
+    Name = "Multi Select",
+    Flag = "MultiDropdown",
+    Multi = true,
+    Default = {"First", "Third"},
+    Items = {"First", "Second", "Third", "Fourth", "Fifth", "Sixth"},
+    MaxSize = 100,
+    Callback = function(Value)
+        print(Value)
+    end
+})
+
+SectionRight:Label("Label with Colorpicker"):Colorpicker({
+    Flag = "Colorpicker",
+    Default = Color3.fromRGB(255, 255, 255),
+    Callback = function(Value)
+        print(Value)
+    end
+})
+
+SectionRight:Label("Label with Keybind"):Keybind({
+    Flag = "Keybind",
+    Default = Enum.KeyCode.E,
+    Callback = function(Value)
+        print(Value)
+    end
+})
+
+local LabelWithBoth = SectionRight:Label("Colorpicker + Keybind")
+LabelWithBoth:Colorpicker({
+    Flag = "ColorpickerBoth",
+    Default = Color3.fromRGB(127, 96, 201),
+    Callback = function(Value)
+        print(Value)
+    end
+})
+LabelWithBoth:Keybind({
+    Flag = "KeybindBoth",
+    Default = Enum.KeyCode.F,
+    Callback = function(Value)
+        print(Value)
+    end
+})
+
+SectionRight:Textbox({
+    Name = "Textbox",
+    Flag = "Textbox",
+    Default = "Text",
+    Numeric = false,
+    Finished = true,
+    Callback = function(Value)
+        print(Value)
+    end
+})
+
+SectionLeft:SearchableDropdown({
+    Name = "Searchable Dropdown",
+    Flag = "SearchableDropdown",
+    Items = {"Apple", "Apricot", "Banana", "Blueberry", "Cherry", "Cranberry", "Dragon Fruit", "Durian", "Elderberry", "Fig", "Grape", "Grapefruit", "Honeydew", "Ice Cream Bean", "Jackfruit", "Kiwi", "Lemon", "Lime", "Mango", "Nectarine", "Orange", "Papaya", "Peach", "Pear", "Pineapple", "Plum", "Raspberry", "Strawberry", "Tangerine", "Watermelon"},
+    Default = "Apple",
+    MaxSize = 150,
+    Callback = function(Value)
+        print("Selected:", Value)
+    end
+})
+
+SectionLeft:SearchableDropdown({
+    Name = "Multi Search Dropdown",
+    Flag = "MultiSearchDropdown",
+    Multi = true,
+    Items = {"Red", "Orange", "Yellow", "Green", "Blue", "Indigo", "Violet", "Pink", "Purple", "Brown", "Black", "White", "Gray", "Cyan", "Magenta", "Lime", "Navy", "Teal", "Silver", "Gold"},
+    Default = {"Red", "Blue"},
+    MaxSize = 120,
+    Callback = function(Value)
+        print("Multi selected:", Value)
+    end
+})
+
+getgenv().Library = Library
+return Library
